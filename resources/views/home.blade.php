@@ -1,124 +1,217 @@
-<!DOCTYPE html>
-<html lang="en" class="h-full bg-gray-100">
+<x-layout>
+  <!-- nafbar -->
+  <x-navbar></x-navbar>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  @vite('resources/css/app.css')
-  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-</head>
+  <!-- hero seciton -->
+<div class="relative w-full h-[320px]" id="home">
+    <div class="absolute inset-0 opacity-70">
+        <img src="/images/phone.jpg" alt="Background Image" class="object-cover object-center w-full h-full" />
 
-<body class="h-full">
+    </div>
+    <div class="absolute inset-9 flex flex-col md:flex-row items-center justify-center">
+        <div class="text-center md:w-1/2 mb-4 md:mb-0">
+            <h1 class="font-medium text-4xl md:text-5xl leading-tight mb-2">Naim Phone Store</h1>
+            <p class="font-regular text-xl mb-8 mt-4 underline decoration-red-600">Aman Terpercaya & Bergaransi</p>
+            <a href="/product"
+                class="px-6 py-3 bg-[#c8a876] text-white font-medium rounded-full hover:bg-[#c09858]  transition duration-200">Buy Now</a>
+        </div>
+    </div>
+</div>
 
-  <div class="min-h-full">
-    <nav class="bg-gray-800" x-data="{ isOpen: false }">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="flex h-16 items-center justify-between">
-          <div class="flex items-center">
-            <div class="flex-shrink-0">
-              <img class="h-8 w-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
-            </div>
-            <div class="hidden md:block">
-              <div class="ml-10 flex items-baseline space-x-4">
-                <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="/" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Home</a>
-                <a href="/product" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Product</a>
-                <a href="/about" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">About</a>
-                <a href="/contact" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">contact</a>
-              </div>
-            </div>
-          </div>
-          <div class="hidden md:block">
-            <div class="ml-4 flex items-center md:ml-6">
-
-              <!-- Profile dropdown -->
-              <div class="relative ml-3">
-                <div>
-                  <button type="button" @click="isOpen = !isOpen" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
-                    <span class="absolute -inset-1.5"></span>
-                    <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
-                  </button>
+<!-- Best Seller -->
+<section class="py-10" id="services">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Best Seller</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://image3.jdomni.in/banner/13062021/42/5C/B1/45AC18B7F8EE562BC3DDB95D34_1623559815667.png?output-format=webp" alt="wheat flour grinding"
+                    class="w-full h-64 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Wheat Flour Grinding</h3>
+                    <p class="text-gray-700 text-base">Our wheat flour grinding service provides fresh, high-quality
+                        flour to businesses and individuals in the area. We use state-of-the-art equipment to grind
+                        wheat into flour, and we offer a variety of flours to meet the needs of our customers.</p>
                 </div>
-                <div x-show="isOpen" x-transition:enter="transition ease-out duration-100 transform" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-75 transform" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                  <!-- Active: "bg-gray-100", Not Active: "" -->
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1606854428728-5fe3eea23475?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JhbSUyMGZsb3VyfGVufDB8fDB8fHww" alt="Coffee"
+                    class="w-full h-64 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Gram Flour Grinding</h3>
+                    <p class="text-gray-700 text-base">Our gram flour is perfect for a variety of uses, including
+                        baking, cooking, and making snacks. It is also a good source of protein and fiber.Our gram flour
+                        grinding service is a convenient and affordable way to get the freshest gram flour possible.</p>
                 </div>
-              </div>
             </div>
-          </div>
-          <div class="-mr-2 flex md:hidden">
-            <!-- Mobile menu button -->
-            <button type="button" @click="isOpen = !isOpen" class="relative inline-flex items-center justify-center rounded-md bg-gray-800 p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" aria-controls="mobile-menu" aria-expanded="false">
-              <span class="absolute -inset-0.5"></span>
-              <span class="sr-only">Open main menu</span>
-              <!-- Menu open: "hidden", Menu closed: "block" -->
-              <svg :class="{'hidden': isOpen, 'block': !isOpen }" class="block h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-              </svg>
-              <!-- Menu open: "block", Menu closed: "hidden" -->
-              <svg :class="{'block': isOpen, 'hidden': !isOpen }" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://image2.jdomni.in/banner/13062021/D2/99/0D/48D7F4AFC48C041DC8D80432E9_1623562146900.png?output-format=webp" alt="Coffee"
+                    class="w-full h-64 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Jowar Flour Grinding</h3>
+                    <p class="text-gray-700 text-base">Our jowar grinding service is a convenient and affordable way to
+                        get fresh, high-quality jowar flour. We use state-of-the-art equipment to grind jowar into a
+                        fine powder, which is perfect for making roti, bread, and other dishes.
+                    <details>
+                        <summary>Read More</summary>
+                        <p>Our jowar flour is also
+                            a good source of protein and fiber, making it a healthy choice for your family.</p>
+                    </details>
+                    </p>
 
-      <!-- Mobile menu, show/hide based on menu state. -->
-      <div x-show="isOpen" class="md:hidden" id="mobile-menu">
-        <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-          <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-          <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Home</a>
-          <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Product</a>
-          <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About</a>
-          <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Alamat</a>
-        </div>
-        <div class="border-t border-gray-700 pb-3 pt-4">
-          <div class="flex items-center px-5">
-            <div class="flex-shrink-0">
-              <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                </div>
             </div>
-            <div class="ml-3">
-              <div class="text-base font-medium leading-none text-white">Tom Cook</div>
-              <div class="text-sm font-medium leading-none text-gray-400">tom@example.com</div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1607672632458-9eb56696346b?q=80&w=1914&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Coffee"
+                    class="w-full h-64 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Chilli pounding</h3>
+                    <p class="text-gray-700 text-base">We specializes in the production of high-quality chili powder.
+                        Our chili powder is made from the finest, freshest chilies, and we use traditional pounding
+                        methods to ensure that our chili powder retains its full flavor and aroma.
+                    <details>
+                        <summary>Read More</summary>
+                        <p> We offer a variety of chili powder products, including mild, medium, and hot. We also offer
+                            custom blends to meet the specific needs of our customers.</p>
+                    </details>
+                    </p>
+                </div>
             </div>
-            <button type="button" class="relative ml-auto flex-shrink-0 rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-              <span class="absolute -inset-1.5"></span>
-              <span class="sr-only">View notifications</span>
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
-              </svg>
-            </button>
-          </div>
-          <div class="mt-3 space-y-1 px-2">
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Your Profile</a>
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Settings</a>
-            <a href="#" class="block rounded-md px-3 py-2 text-base font-medium text-gray-400 hover:bg-gray-700 hover:text-white">Sign out</a>
-          </div>
+            <!-- special card -->
+            <div
+                class="bg-white rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg overflow-hidden min-h-full">
+                <div class="text-center text-white font-medium">Special product</div>
+                <img src="https://images.unsplash.com/photo-1556910110-a5a63dfd393c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmF3JTIwc3BhZ2hldHRpfGVufDB8fDB8fHww" alt="Coffee"
+                    class="w-full h-64 object-cover rounded-t-lg">
+                <div class="p-6 bg-white text-center rounded-b-lg md:min-h-full">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Flavoured Spaghetti</h3>
+                    <p class="text-gray-700 text-base"><span class="font-medium underline">Our speciality is</span>
+                        Bappa Flour Mill offers a variety of flavored spaghetti dishes that are sure to tantalize your
+                        taste
+                        buds. We use only the freshest ingredients Our
+                        flavors include: Mango, spinach
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://media.istockphoto.com/id/1265641298/photo/fried-papad.jpg?s=612x612&w=0&k=20&c=e_iEy4CTvU6Thn02zGgKt_TiSYAheCKmgfTF5j52ovU=" alt="papad"
+                    class="w-full h-64 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Rice Papad</h3>
+                    <p class="text-gray-700 text-base">Our company produces high-quality rice papad that is made with
+                        the finest ingredients. We use traditional methods to make our papad, which gives it a unique
+                        flavor and texture. Our papad is also gluten-free and vegan.
+                    <details>
+                        <summary>Read More</summary>
+                        <p> We offer a variety of rice papad flavors, including plain, salted, spicy, and flavored. We
+                            also
+                            offer a variety of sizes and shapes to choose from. Our papad is available in bulk or in
+                            individual packages.</p>
+                    </details>
+                    </p>
+                </div>
+            </div>
+
         </div>
-      </div>
-    </nav>
+    </div>
+</section>
 
-    <header class="bg-white shadow">
-      <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <h1 class="text-3xl font-bold tracking-tight text-gray-900">Halmaan Home</h1>
-      </div>
-    </header>
-    <main>
-      <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
-        <!-- Your content -->
-        <h3>selamat datang di halaman Home</h3>
-        <p>di sini akan di jelaskan tentang Np-Store, sejarah dan bagaimana cara pengoprasianya.</p>
+<!-- Neswest Product -->
+<section class="py-10" id="services">
+    <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8 text-center">Newest Product</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://image3.jdomni.in/banner/13062021/42/5C/B1/45AC18B7F8EE562BC3DDB95D34_1623559815667.png?output-format=webp" alt="wheat flour grinding"
+                    class="w-full h-64 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Wheat Flour Grinding</h3>
+                    <p class="text-gray-700 text-base">Our wheat flour grinding service provides fresh, high-quality
+                        flour to businesses and individuals in the area. We use state-of-the-art equipment to grind
+                        wheat into flour, and we offer a variety of flours to meet the needs of our customers.</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1606854428728-5fe3eea23475?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JhbSUyMGZsb3VyfGVufDB8fDB8fHww" alt="Coffee"
+                    class="w-full h-64 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Gram Flour Grinding</h3>
+                    <p class="text-gray-700 text-base">Our gram flour is perfect for a variety of uses, including
+                        baking, cooking, and making snacks. It is also a good source of protein and fiber.Our gram flour
+                        grinding service is a convenient and affordable way to get the freshest gram flour possible.</p>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://image2.jdomni.in/banner/13062021/D2/99/0D/48D7F4AFC48C041DC8D80432E9_1623562146900.png?output-format=webp" alt="Coffee"
+                    class="w-full h-64 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Jowar Flour Grinding</h3>
+                    <p class="text-gray-700 text-base">Our jowar grinding service is a convenient and affordable way to
+                        get fresh, high-quality jowar flour. We use state-of-the-art equipment to grind jowar into a
+                        fine powder, which is perfect for making roti, bread, and other dishes.
+                    <details>
+                        <summary>Read More</summary>
+                        <p>Our jowar flour is also
+                            a good source of protein and fiber, making it a healthy choice for your family.</p>
+                    </details>
+                    </p>
 
-      </div>
-    </main>
-  </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1607672632458-9eb56696346b?q=80&w=1914&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Coffee"
+                    class="w-full h-64 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Chilli pounding</h3>
+                    <p class="text-gray-700 text-base">We specializes in the production of high-quality chili powder.
+                        Our chili powder is made from the finest, freshest chilies, and we use traditional pounding
+                        methods to ensure that our chili powder retains its full flavor and aroma.
+                    <details>
+                        <summary>Read More</summary>
+                        <p> We offer a variety of chili powder products, including mild, medium, and hot. We also offer
+                            custom blends to meet the specific needs of our customers.</p>
+                    </details>
+                    </p>
+                </div>
+            </div>
+            <!-- special card -->
+            <div
+                class="bg-white rounded-lg bg-gradient-to-tr from-pink-300 to-blue-300 p-0.5 shadow-lg overflow-hidden min-h-full">
+                <div class="text-center text-white font-medium">Special product</div>
+                <img src="https://images.unsplash.com/photo-1556910110-a5a63dfd393c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8cmF3JTIwc3BhZ2hldHRpfGVufDB8fDB8fHww" alt="Coffee"
+                    class="w-full h-64 object-cover rounded-t-lg">
+                <div class="p-6 bg-white text-center rounded-b-lg md:min-h-full">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Flavoured Spaghetti</h3>
+                    <p class="text-gray-700 text-base"><span class="font-medium underline">Our speciality is</span>
+                        Bappa Flour Mill offers a variety of flavored spaghetti dishes that are sure to tantalize your
+                        taste
+                        buds. We use only the freshest ingredients Our
+                        flavors include: Mango, spinach
+                    </p>
+                </div>
+            </div>
 
-</body>
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img src="https://media.istockphoto.com/id/1265641298/photo/fried-papad.jpg?s=612x612&w=0&k=20&c=e_iEy4CTvU6Thn02zGgKt_TiSYAheCKmgfTF5j52ovU=" alt="papad"
+                    class="w-full h-64 object-cover">
+                <div class="p-6 text-center">
+                    <h3 class="text-xl font-medium text-gray-800 mb-2">Rice Papad</h3>
+                    <p class="text-gray-700 text-base">Our company produces high-quality rice papad that is made with
+                        the finest ingredients. We use traditional methods to make our papad, which gives it a unique
+                        flavor and texture. Our papad is also gluten-free and vegan.
+                    <details>
+                        <summary>Read More</summary>
+                        <p> We offer a variety of rice papad flavors, including plain, salted, spicy, and flavored. We
+                            also
+                            offer a variety of sizes and shapes to choose from. Our papad is available in bulk or in
+                            individual packages.</p>
+                    </details>
+                    </p>
+                </div>
+            </div>
 
-</html>
+        </div>
+    </div>
+</section>
+
+</x-layout>
